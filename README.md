@@ -1,2 +1,2 @@
 # todo.nvim
-Todo List and Logs for Projects
+Todo List and Logs for Projects while using Neovim
