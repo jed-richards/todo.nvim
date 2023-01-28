@@ -1,3 +1,6 @@
+
+print("Hello from todo plugin!")
+
 --local api = vim.api
 local buf, win
 
@@ -31,4 +34,10 @@ local function open_window()
     -- finally crate the window with a buffer attached
     win = vim.api.nvim_open_win(buf, true, opts)
 
+    print("Hello from function!")
+
 end
+
+return {
+    open_window = open_window
+}

@@ -1,0 +1,12 @@
+-- 1/27/2023 --
+
+{ 
+    1 : Made project directory system and wrote a basic function to open a floating window. I followed 
+        along with code from (https://dev.to/2nit/how-to-write-neovim-plugins-in-lua-5cca). I did this
+        to learn the basics of opening a floating window.
+
+    2 : For now, in order to test I need to always start neovim using (nvim --cmd "set rtp+=./") from 
+        within this directory. Then within vim I can call my functions by using:
+        (:lua require("todo")) and (:lua require("todo.todo").open_window())
+}
+        

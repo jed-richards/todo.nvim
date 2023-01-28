@@ -1,0 +1,17 @@
+-- 1/27/2023 --
+
+{
+    1 : Finish writing code from online and understand what it is doing.
+
+    2 : Look into buffers and windows. Learn the basic vim navigation of them. 
+
+    3 : Make my own implementation of opening and closing windows and the overall look of them.
+
+    4 : Look into this 
+
+        timeHMS _ `[all]`
+        ───────────────────────────────────────────────────
+        I give you back the time (H:M:S)
+
+        ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}
+}
