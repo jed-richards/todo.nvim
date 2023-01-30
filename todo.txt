@@ -15,3 +15,16 @@
 
         ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}
 }
+
+
+-- 1/29/2023 --
+
+{
+    1 : Fix set_mappings() functions (set keymapping <leader>td to open todo window)
+
+    2 : Make a close window function and set key map to 'q' while in buffer (nvim_buf_set_keymap())
+
+    3 : Set up rtp so it knows to search here without using 'vim --cmd 'set rtp+=./'
+
+    4 : Look into nerdfonts so i can make the border 'pretty'
+}
