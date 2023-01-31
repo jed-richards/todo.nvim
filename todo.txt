@@ -28,3 +28,10 @@
 
     4 : Look into nerdfonts so i can make the border 'pretty'
 }
+
+
+-- 1/31/2023 --
+
+{
+    1 : Still need to work on keymaps with (set_mappings())
+}

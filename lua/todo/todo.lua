@@ -46,12 +46,12 @@ local function open_window()
 
     local border_buf = vim.api.nvim_create_buf(false, true)
 
-    local border_lines = { 'T' .. string.rep('=', win_width) .. 'T' }
-    local middle_line = '|' .. string.rep(' ', win_width) .. '|'
+    local border_lines = { '╭' .. string.rep('─', win_width) .. '╮' }
+    local middle_line = '│' .. string.rep(' ', win_width) .. '│'
     for i=1, win_height do
         table.insert(border_lines, middle_line)
     end
-    table. insert(border_lines, 'L' .. string.rep('=', win_width) .. 'L')
+    table. insert(border_lines, '╰' .. string.rep('─', win_width) .. '╯')
 
     vim.api.nvim_buf_set_lines(border_buf, 0, -1, false, border_lines)
     -- set buffer's (border_buf) lines from first line (0) to last (-1)
