@@ -33,3 +33,10 @@
     3 : Dove into reading ThePrimeagen's Harpoon plugin to see how that is 
         written.
 }
+
+-- 2/7/2023 --
+
+{
+    1 : Modularized code base for more readability. Made window.lua and 
+        keymap.lua
+}

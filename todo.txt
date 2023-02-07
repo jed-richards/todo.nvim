@@ -5,7 +5,8 @@
 
     2 : Look into buffers and windows. Learn the basic vim navigation of them. 
 
-    3 : Make my own implementation of opening and closing windows and the overall look of them.
+    3 : Make my own implementation of opening and closing windows and the 
+        overall look of them.
 
     4 : Look into this 
 
@@ -20,11 +21,14 @@
 -- 1/29/2023 --
 
 {
-    1 : Fix set_mappings() functions (set keymapping <leader>td to open todo window)
+    1 : Fix set_mappings() functions (set keymapping <leader>td to open todo 
+        window)
 
-    2 : Make a close window function and set key map to 'q' while in buffer (nvim_buf_set_keymap())
+    2 : Make a close window function and set key map to 'q' while in buffer 
+        (nvim_buf_set_keymap())
 
-    3 : Set up rtp so it knows to search here without using 'vim --cmd 'set rtp+=./'
+    3 : Set up rtp so it knows to search here without using 
+        'vim --cmd 'set rtp+=./'
 
     4 : Look into nerdfonts so i can make the border 'pretty'
 }
@@ -34,4 +38,12 @@
 
 {
     1 : Still need to work on keymaps with (set_mappings())
+}
+
+
+-- 2/7/2023 --
+
+{
+    1 : Idea for project and file storing -> crawl backwards in directory
+        looking for .todo directory. This will allow for nesting. 
 }
