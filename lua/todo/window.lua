@@ -13,6 +13,8 @@ local main_buf, win
 -- Open Window Function
 local function open_window()
 
+    print(file_path)
+
     -- get dimensions for window based on current window
     local width = vim.api.nvim_get_option("columns")
     local height = vim.api.nvim_get_option("lines")

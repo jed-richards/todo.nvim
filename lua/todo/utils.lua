@@ -9,7 +9,8 @@ local M = {}
 -- the file in the current buffer.
 --   ex.) /home/username/path/to/file.txt
 function M.get_path_to_file()
-    return vim.fn.expand('%:p')
+    return vim.api.nvim_buf_get_name(0)
+    --return vim.fn.expand('%:p')
 end
 
 -- Returns a string of the full path to current buffer NOT including
