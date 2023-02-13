@@ -47,3 +47,14 @@
     1 : Idea for project and file storing -> crawl backwards in directory
         looking for .todo directory. This will allow for nesting. 
 }
+
+
+-- 2/12/2023 --
+
+{
+    1 : I need to make it so when I open a window with open_window() that I am
+        able to have a variable with the path to the current directory and file
+        of the previous buffer that the function was called in. 
+
+    2 : Figure out how to make a directory and file.
+}

@@ -1,7 +1,14 @@
+-- Pull in utils
+local utils = require('todo.utils')
+local dir_path = utils.get_path_to_directory()
+local file_path = utils.get_path_to_file()
+
+
 -- This is for the code for the window set up of the todo plugin 
 
 --local api = vim.api
 local main_buf, win
+
 
 -- Open Window Function
 local function open_window()

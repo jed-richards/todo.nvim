@@ -40,3 +40,19 @@
     1 : Modularized code base for more readability. Made window.lua and 
         keymap.lua
 }
+
+
+-- 2/11/2023 --
+
+{
+    1 : Added my plugin in packer. This has allowed neovim to have my plugin 
+        installed. Know neew for 'vimtodo' anymore.
+}
+
+
+-- 2/12/2023 --
+
+{
+    1 : Added a utils.lua file that has a module that can use vim funtions to 
+        find the path to the current directory and file.
+}
