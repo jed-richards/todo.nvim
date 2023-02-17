@@ -56,3 +56,14 @@
     1 : Added a utils.lua file that has a module that can use vim funtions to 
         find the path to the current directory and file.
 }
+
+
+-- 2/16/2023 --
+
+{
+    1 : Fixed call when opening window so that it finds the path to the current
+        file in the buffer.
+
+    2 : Found vim.fs.find() which searchs a path for files or directories. I 
+        could use this to search for .todo/ or .todo.txt or something.
+}

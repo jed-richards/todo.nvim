@@ -1,7 +1,5 @@
 -- Pull in utils
 local utils = require('todo.utils')
-local dir_path = utils.get_path_to_directory()
-local file_path = utils.get_path_to_file()
 
 
 -- This is for the code for the window set up of the todo plugin 
@@ -13,6 +11,10 @@ local main_buf, win
 -- Open Window Function
 local function open_window()
 
+    local dir_path = utils.get_path_to_directory()
+    local file_path = utils.get_path_to_file()
+
+    print(dir_path)
     print(file_path)
 
     -- get dimensions for window based on current window

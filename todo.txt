@@ -58,3 +58,13 @@
 
     2 : Figure out how to make a directory and file.
 }
+
+
+-- 2/16/2023 --
+
+{
+    1 : I need to figure out how I want to make a file attach to a buffer. Maybe
+        if the file doesn't exist then I make it and read from it and write to
+        it from the buffer, like python with open(fileName, "r/w") and write it
+        to the buffer. Idk just an idea.
+}
