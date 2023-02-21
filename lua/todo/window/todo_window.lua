@@ -1,5 +1,5 @@
 -- Pull in utils
-local utils = require('todo.utils')
+local utils = require('todo.window.win_utils')
 
 
 -- This is for the code for the window set up of the todo plugin 
@@ -57,6 +57,7 @@ local function open_window()
     --vim.api.nvim_buf_call(main_buf, vim.cmd.edit)
 
     main_buf = vim.fn.bufadd(dir_path..'/.todo/todo.txt')
+    vim.api.nvim_buf_set_option(main_buf, 'bufhidden', 'wipe')
     vim.fn.bufload(main_buf)
     print(dir_path..'/.todo/todo.txt:')
     utils.print_buffer_contents(main_buf)
