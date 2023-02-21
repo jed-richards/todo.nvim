@@ -68,3 +68,15 @@
         it from the buffer, like python with open(fileName, "r/w") and write it
         to the buffer. Idk just an idea.
 }
+
+
+-- 2/20/2023 --
+{
+    1 : use vim.fn.isdirectory('.todo') to check if .todo/ exists
+
+    2 : use vim.fn.getcwd() to get the path the cwd
+
+    3 : use vim.fn.mkdir() to make a new directory
+
+    4 : continue looking in help/docs for vim.fn and vim-function
+}
