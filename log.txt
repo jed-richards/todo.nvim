@@ -1,5 +1,4 @@
 -- 1/27/2023 --
-
 { 
     1 : Made project directory system and wrote a basic function to open a floating window. I followed 
         along with code from (https://dev.to/2nit/how-to-write-neovim-plugins-in-lua-5cca). I did this
@@ -12,7 +11,6 @@
         
 
 -- 1/29/2023 --
-
 {
     1 : Implemented a border window that closes with main window on close.
 
@@ -23,7 +21,6 @@
 
 
 -- 1/31/2023 --
-
 {
     1 : Made an alias in (~/.bashrc) for (vim --cmd "set rtp+=./") now it is
         (vimtodo)
@@ -34,8 +31,8 @@
         written.
 }
 
--- 2/7/2023 --
 
+-- 2/7/2023 --
 {
     1 : Modularized code base for more readability. Made window.lua and 
         keymap.lua
@@ -43,7 +40,6 @@
 
 
 -- 2/11/2023 --
-
 {
     1 : Added my plugin in packer. This has allowed neovim to have my plugin 
         installed. Know neew for 'vimtodo' anymore.
@@ -51,7 +47,6 @@
 
 
 -- 2/12/2023 --
-
 {
     1 : Added a utils.lua file that has a module that can use vim funtions to 
         find the path to the current directory and file.
@@ -59,11 +54,21 @@
 
 
 -- 2/16/2023 --
-
 {
     1 : Fixed call when opening window so that it finds the path to the current
         file in the buffer.
 
     2 : Found vim.fs.find() which searchs a path for files or directories. I 
         could use this to search for .todo/ or .todo.txt or something.
+}
+
+
+-- 2/21/2023 --
+{
+    1 : Created a path_utils.lua to use for os path stuff.
+
+    2 : Modularized codebase a bit more by making window its own folder.
+        I need to make window a module.
+
+    3 : Fixed buffers to close at the same time.
 }

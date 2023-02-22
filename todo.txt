@@ -80,3 +80,12 @@
 
     4 : continue looking in help/docs for vim.fn and vim-function
 }
+
+
+-- 2/21/2023 --
+{
+    1 : Make window.lua into a module that can be created and called in 
+        todo.lua
+
+    2 : Maybe have to use vim.fn.chdir() to change cwd
+}

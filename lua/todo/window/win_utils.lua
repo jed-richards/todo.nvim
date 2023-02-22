@@ -19,16 +19,17 @@ function M.get_path_to_directory()
     return vim.fn.expand('%:h')
 end
 
+-- idk if i even need this
 function M.print_buffer_contents(bufnr)
     local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, true)
 
-    if (vim.tbl_isempty(lines)) then
-        print('[unloaded buffer]\n')
-    elseif (#lines == 1 and lines[1] == '') then
-        print('[empty buffer]\n')
-    else
-        print(table.concat(lines, '\n')..'\n')
-    end
+    --if (vim.tbl_isempty(lines)) then
+    --    print('[unloaded buffer]\n')
+    --elseif (#lines == 1 and lines[1] == '') then
+    --    print('[empty buffer]\n')
+    --else
+    --    print(table.concat(lines, '\n')..'\n')
+    --end
 
 end
 

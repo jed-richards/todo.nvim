@@ -1,5 +1,5 @@
 -- Pull in utils
-local utils = require('todo.window.win_utils')
+local win_utils = require('todo.window.win_utils')
 
 
 -- This is for the code for the window set up of the todo plugin 
@@ -11,19 +11,21 @@ local main_buf, win
 -- Open Window Function
 local function open_window()
 
-    local dir_path = utils.get_path_to_directory()
-    local file_path = utils.get_path_to_file()
+    local dir_path = win_utils.get_path_to_directory()
+    local file_path = win_utils.get_path_to_file()
 
-    print(dir_path)
-    print(file_path)
+    print('dir_path: ' .. dir_path)
+    print('file_path: ' .. file_path)
 
     -- get dimensions for window based on current window
     local width = vim.api.nvim_get_option("columns")
     local height = vim.api.nvim_get_option("lines")
 
     -- calculate out floating window size
-    local win_width = math.ceil(width * 0.8)
-    local win_height = math.ceil(height * 0.8 - 4)
+    --local win_width = math.ceil(width * 0.8)
+    --local win_height = math.ceil(height * 0.8 - 4)
+    local win_width = math.ceil(width * 0.4)
+    local win_height = math.ceil(height * 0.4 - 4)
 
     -- calculate starting position
     local row = math.ceil((height - win_height) / 2 - 1)
@@ -56,11 +58,16 @@ local function open_window()
     --vim.api.nvim_buf_set_name(main_buf, dir_path..'/.todo/todo.txt')
     --vim.api.nvim_buf_call(main_buf, vim.cmd.edit)
 
-    main_buf = vim.fn.bufadd(dir_path..'/.todo/todo.txt')
+    main_buf = vim.fn.bufadd(dir_path .. '/.todo/todo.txt')
+
+    -- this line allows buffer to close with border buffer
     vim.api.nvim_buf_set_option(main_buf, 'bufhidden', 'wipe')
+
     vim.fn.bufload(main_buf)
-    print(dir_path..'/.todo/todo.txt:')
-    utils.print_buffer_contents(main_buf)
+
+    print('path to main_buf: ' .. dir_path .. '/.todo/todo.txt:')
+
+    --utils.print_buffer_contents(main_buf)
 
     -- Create border buffer
     local border_buf = vim.api.nvim_create_buf(false, true)
