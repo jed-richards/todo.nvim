@@ -1,5 +1,4 @@
 -- 1/27/2023 --
-
 {
     1 : Finish writing code from online and understand what it is doing.
 
@@ -19,7 +18,6 @@
 
 
 -- 1/29/2023 --
-
 {
     1 : Fix set_mappings() functions (set keymapping <leader>td to open todo 
         window)
@@ -35,14 +33,12 @@
 
 
 -- 1/31/2023 --
-
 {
     1 : Still need to work on keymaps with (set_mappings())
 }
 
 
 -- 2/7/2023 --
-
 {
     1 : Idea for project and file storing -> crawl backwards in directory
         looking for .todo directory. This will allow for nesting. 
@@ -50,7 +46,6 @@
 
 
 -- 2/12/2023 --
-
 {
     1 : I need to make it so when I open a window with open_window() that I am
         able to have a variable with the path to the current directory and file
@@ -61,7 +56,6 @@
 
 
 -- 2/16/2023 --
-
 {
     1 : I need to figure out how I want to make a file attach to a buffer. Maybe
         if the file doesn't exist then I make it and read from it and write to

@@ -72,3 +72,9 @@
 
     3 : Fixed buffers to close at the same time.
 }
+
+
+-- 2/22/2023 --
+{
+    1 : Made a dir_exists(directory, bufnr) in path_utils.lua
+}

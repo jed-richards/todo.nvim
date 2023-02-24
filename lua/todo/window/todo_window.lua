@@ -1,15 +1,30 @@
--- Pull in utils
 local win_utils = require('todo.window.win_utils')
-
-
--- This is for the code for the window set up of the todo plugin 
+local path_utils = require('todo.path_utils')
 
 --local api = vim.api
 local main_buf, win
 
-
 -- Open Window Function
 local function open_window()
+
+    print('___________________________________')
+    print(path_utils.dir_exists('.todo', '%'))
+    print(path_utils.dir_exists('dir_not_exist', '%'))
+    print('___________________________________')
+
+--[[
+    if (path_utils.dir_exists('.todo', '%')) then
+        print('.todo exists')
+    else
+        print('.todo does not exist')
+    end
+
+    if (path_utils.dir_exists('window', '%')) then
+        print('window exists')
+    else
+        print('window does not exist')
+    end
+--]]
 
     local dir_path = win_utils.get_path_to_directory()
     local file_path = win_utils.get_path_to_file()
