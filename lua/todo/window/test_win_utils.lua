@@ -37,11 +37,12 @@ local M = {}
         -- get dimensions for window based on current window
         local width = vim.api.nvim_get_option("columns")
         local height = vim.api.nvim_get_option("lines")
-        local win_width = math.ceil(width * 0.4)
-        local win_height = math.ceil(height * 0.4 - 4)
+        local win_width = math.ceil(width * 0.2)
+        local win_height = math.ceil(height * 0.4 - 1)
 
         -- Create border lines for border buffer
-        local border_lines = { '╭' .. string.rep('─', win_width) .. '╮' }
+        local border_lines = { '╭' .. string.rep('─', win_width/2 - 5) .. ' TODO LIST ' .. string.rep('─', win_width/2 - 6) .. '╮' }
+        --local border_lines = { '╭' .. string.rep('─', win_width) .. '╮' }
         local middle_line = '│' .. string.rep(' ', win_width) .. '│'
         for i=1, win_height do
             table.insert(border_lines, middle_line)
@@ -73,8 +74,8 @@ local M = {}
         local height = vim.api.nvim_get_option("lines")
 
         -- calculate floating window size
-        local win_width = math.ceil(width * 0.4)
-        local win_height = math.ceil(height * 0.4 - 4)
+        local win_width = math.ceil(width * 0.2)
+        local win_height = math.ceil(height * 0.4 - 1)
 
         -- calculate starting position
         local row = math.ceil((height - win_height) / 2 - 1)

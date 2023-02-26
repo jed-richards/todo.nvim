@@ -78,3 +78,16 @@
 {
     1 : Made a dir_exists(directory, bufnr) in path_utils.lua
 }
+
+
+-- 2/26/2023 --
+{
+    1 : Made progress on creating a directory if one does not exist and am able 
+        to open a todo.txt file within that directory. 
+
+    2 : Made some updates to the look and size of the window within
+        test_win_utils.lua. 
+
+    3 : Overall, I feel pretty good. I am making good progress. Now I just need
+        to make it look pretty. 
+}

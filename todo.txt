@@ -83,3 +83,14 @@
 
     2 : Maybe have to use vim.fn.chdir() to change cwd
 }
+
+
+-- 2/26/2023 --
+{
+    1 : I might want to make the todo.txt be in JSON format so that when I want
+        to make buttons to check off items that I can delete the Key/Value pair
+        from the dictionary.
+
+    2 : I need to make keymappings while in the todo buffer that allows quiting
+        and etc.
+}
