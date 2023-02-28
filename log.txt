@@ -91,3 +91,9 @@
     3 : Overall, I feel pretty good. I am making good progress. Now I just need
         to make it look pretty. 
 }
+
+
+-- 2/27/2023 --
+{
+    1 : Added keymaps and line numbers for todo list window and buffer.
+}

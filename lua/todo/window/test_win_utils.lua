@@ -63,6 +63,20 @@ local M = {}
         local main_buf = vim.fn.bufadd(dir_path .. '/.todo/todo.txt')
         vim.api.nvim_buf_set_option(main_buf, 'bufhidden', 'wipe')
         vim.fn.bufload(main_buf)
+        vim.api.nvim_buf_set_keymap(
+            main_buf,
+            "n",
+            "q",
+            ":wq<CR>",
+            { silent = true }
+        )
+        vim.api.nvim_buf_set_keymap(
+            main_buf,
+            "n",
+            "<leader>td",
+            ":wq<CR>",
+            { silent = true }
+        )
         return main_buf
     end
 
@@ -88,7 +102,7 @@ local M = {}
             width = win_width,
             height = win_height,
             row = row,
-            col = col
+            col = col,
         }
 
         -- set border options

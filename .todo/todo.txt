@@ -1,5 +1,7 @@
-hello
+- Clean up code base
 
-hello from in here
-
-hello again
+- Make UI have functionality:
+    check_off()
+    add_item() (make default look)
+    remove_item()
+    delete_list()

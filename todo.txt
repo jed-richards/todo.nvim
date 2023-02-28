@@ -94,3 +94,14 @@
     2 : I need to make keymappings while in the todo buffer that allows quiting
         and etc.
 }
+
+
+-- 2/27/2023 --
+{
+    1 : Clean up code base
+
+    2 : Make UI have functionality:
+            check_off()
+            add_item() (make default look)
+            remove_item()
+}

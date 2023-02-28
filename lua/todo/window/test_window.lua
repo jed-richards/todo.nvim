@@ -24,6 +24,7 @@ local M = {}
 
         -- create a window for the main buffer
         win = vim.api.nvim_open_win(main_buf, true, main_opts)
+        vim.api.nvim_win_set_option(win, "number", true)
 
         -- This allows the two buffers to close together
         vim.api.nvim_command(
