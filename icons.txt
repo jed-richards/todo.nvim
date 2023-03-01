@@ -1,0 +1,3 @@
+unmarked = 󰄱
+marked = 󰡖
+drop_down = 󰜰
