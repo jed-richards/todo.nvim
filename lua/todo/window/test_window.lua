@@ -1,6 +1,6 @@
 --local win_utils = require('todo.window.win_utils')
 local win_utils = require('todo.window.test_win_utils')
-local path_utils = require('todo.path_utils')
+local path_utils = require('todo.path.path_utils')
 
 
 local M = {}

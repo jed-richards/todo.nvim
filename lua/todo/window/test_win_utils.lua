@@ -29,7 +29,7 @@ local M = {}
 
     end
 
-    -- Creates a border buffer for the main buffer based of the 
+    -- Creates a border buffer for the main buffer based off the 
     -- size of the current window.
     function M.create_border_buf()
         local border_buf = vim.api.nvim_create_buf(false, true)
@@ -41,7 +41,7 @@ local M = {}
         local win_height = math.ceil(height * 0.4 - 1)
 
         -- Create border lines for border buffer
-        local border_lines = { '╭' .. string.rep('─', win_width/2 - 5) .. ' TODO LIST ' .. string.rep('─', win_width/2 - 6) .. '╮' }
+        local border_lines = { '╭' .. string.rep('─', win_width/2 - 5) .. ' TODO LIST ' .. string.rep('─', win_width/2 - 5) .. '╮' }
         --local border_lines = { '╭' .. string.rep('─', win_width) .. '╮' }
         local middle_line = '│' .. string.rep(' ', win_width) .. '│'
         for i=1, win_height do

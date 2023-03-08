@@ -105,3 +105,16 @@
             add_item() (make default look)
             remove_item()
 }
+
+
+-- 3/7/2023 --
+{
+    1 : Finish item module.
+
+    2 : Implement the JSON item list and not the .txt file
+
+    3 : Make UI have functionality:
+            check_off()
+            add_item() (make default look)
+            remove_item()
+}
