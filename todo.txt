@@ -107,6 +107,7 @@
 }
 
 
+<<<<<<< HEAD
 -- 2/28/2023 --
 {
     1 : make items dictionary
@@ -120,4 +121,16 @@
                     icon = // based on state
                 }
             }
+=======
+-- 3/7/2023 --
+{
+    1 : Finish item module.
+
+    2 : Implement the JSON item list and not the .txt file
+
+    3 : Make UI have functionality:
+            check_off()
+            add_item() (make default look)
+            remove_item()
+>>>>>>> ba21ef21640b1d8edbbbd7490cecb119711fd0e6
 }

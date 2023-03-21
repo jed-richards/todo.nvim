@@ -97,3 +97,13 @@
 {
     1 : Added keymaps and line numbers for todo list window and buffer.
 }
+
+
+-- 3/7/2023 --
+{
+    1 : Today, I made a lot of progress. I figured out how to use JSON to
+        encode and decode tables. I created lua modules for what a list will 
+        look like. I further modulared my codebase by adding item, json, list, 
+        and path directories. My hope with this is to have a easy to read and
+        understand codebase. 
+}
