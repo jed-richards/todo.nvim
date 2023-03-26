@@ -1,10 +1,19 @@
 local List = require('todo.list.list')
 
+local function makeItem(desc)
+    local class = require('todo.item.testOOP')
+    item = class.new()
+    item:setDesc(desc)
+    return item
+end
+
+--[[
 local function make_Item(desc)
     local item = require('todo.item.item')
     item.setDesc(desc)
     return item
 end
+--]]
 
 --[[
 local item1 = {
@@ -28,10 +37,10 @@ local item4 = {
 }
 --]]
 
-local item1 = make_Item("Description 1")
-local item2 = make_Item("Description 2")
-local item3 = make_Item("Description 3")
-local item4 = make_Item("Description 4")
+local item1 = makeItem("Description 1")
+local item2 = makeItem("Description 2")
+local item3 = makeItem("Description 3")
+local item4 = makeItem("Description 4")
 
 --List.addItem(item1)
 --List.addItem(item2)
