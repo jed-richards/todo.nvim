@@ -1,3 +1,15 @@
+local item_methods = {}
+local idx = {__index = item_methods}
+
+function item_methods:toggle_state()
+    if (self.details.state == "marked") then
+        self.details.state = "unmarked"
+    else
+        self.details.state = "marked"
+    end
+    self:update_icon()
+end
+
 Item = {}
 
 Item.icons = {
@@ -53,4 +65,5 @@ print('after toggle')
 
 print(vim.inspect(item1))
 print(vim.inspect(item2))
+
 
