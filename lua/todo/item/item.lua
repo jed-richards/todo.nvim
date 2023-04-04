@@ -1,44 +1,36 @@
-local Item = {}
+local itemUtils = {}
 
-    Item.icons = {
-        unmarked = '󰄱',
-        marked = '󰡖',
+itemUtils.icons = {
+    unmarked = '󰄱',
+    marked = '󰡖',
+}
+
+function itemUtils:newItem()
+    return {
+        desc = "Default description",
+        state = "Unmarked",
+        icon = '󰄱',
     }
+end
 
-    -- Default item look
-    Item.desc = ""
-    Item.state = "unmarked"
-    Item.icon = ""
+-- updates icon based on the state
+function itemUtils:update_icon(tbl)
+    tbl.icon = itemUtils.icons[tbl.state]
+end
 
-    --[[
-        Item = {
-            desc = "Drink water",
-            state = "marked",
-            icon = "󰡖"
-        }
-    --]]
-
-    -- updates icon based on the state
-    function Item.update_icon()
-        Item["icon"] = Item.icons[Item.state]
+-- Toggles between states and updates icon
+function itemUtils:toggle_state(tbl)
+    if (tbl.state == "marked") then
+        tbl.state = "unmarked"
+    else
+        tbl.state = "marked"
     end
+    itemUtils:update_icon(tbl)
+end
 
-    -- Toggles between states and updates icon
-    function Item.toggle_state()
-        if (Item["state"] == "marked") then
-            Item["state"] = "unmarked"
-        else
-            Item["state"] = "marked"
-        end
-        Item.update_icon()
-    end
+-- Functionality to change the items description
+function itemUtils:setDesc(tbl, str)
+    tbl.desc = str
+end
 
-    -- Functionality to change the items description
-    function Item.setDesc(str)
-        Item["desc"] = str
-    end
-
-    -- Set initial icon
-    Item.update_icon()
-
-return Item
+return itemUtils

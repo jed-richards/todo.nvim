@@ -5,10 +5,9 @@ local LIST = require("lua.todo.list.list")
 item1 = ITEM:newItem()
 item2 = ITEM:newItem()
 
---LIST.addItem(item1)
---LIST.addItem(item2)
+LIST.addItem(item1)
+LIST.addItem(item2)
 
---[[
 print("LIST")
 print(vim.inspect(LIST.items))
 
@@ -30,11 +29,11 @@ print(vim.inspect(LIST.items))
 print()
 
 --LIST.removeAll()
---]]
 
 --json1 = JSON.encode(item1)
 
---json_all = JSON.encode(LIST.items)
+json_all = JSON.encode(LIST.items)
+--]]
 
 print(json_all)
 

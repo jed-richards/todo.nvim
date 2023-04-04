@@ -1,7 +1,0 @@
-- Clean up code base
-
-- Make UI have functionality:
-    check_off()
-    add_item() (make default look)
-    remove_item()
-    delete_list()
