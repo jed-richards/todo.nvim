@@ -1,69 +1,55 @@
-local item_methods = {}
-local idx = {__index = item_methods}
+local itemUtils = {}
 
-function item_methods:toggle_state()
-    if (self.details.state == "marked") then
-        self.details.state = "unmarked"
-    else
-        self.details.state = "marked"
-    end
-    self:update_icon()
-end
-
-Item = {}
-
-Item.icons = {
+itemUtils.icons = {
     unmarked = '󰄱',
     marked = '󰡖',
 }
 
-Item.details = {
-    desc = "",
-    state = "unmarked",
-    icon = ""
-}
-
-function Item:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
+function itemUtils:newItem()
+    return {
+        desc = "Default description",
+        state = "Unmarked",
+        icon = '󰄱',
+    }
 end
 
 -- updates icon based on the state
-function Item:update_icon()
-    self.details.icon = self.icons[self.details.state]
+function itemUtils:update_icon(tbl)
+    tbl.icon = itemUtils.icons[tbl.state]
 end
 
 -- Toggles between states and updates icon
-function Item:toggle_state()
-    if (self.details.state == "marked") then
-        self.details.state = "unmarked"
+function itemUtils:toggle_state(tbl)
+    if (tbl.state == "marked") then
+        tbl.state = "unmarked"
     else
-        self.details.state = "marked"
+        tbl.state = "marked"
     end
-    self:update_icon()
+    itemUtils:update_icon(tbl)
 end
 
 -- Functionality to change the items description
-function Item:setDesc(str)
-    self.details.desc = str
+function itemUtils:setDesc(tbl, str)
+    tbl.desc = str
 end
 
 
-item1 = Item:new()
-item2 = Item:new()
+item1 = itemUtils:newItem()
+item2 = itemUtils:newItem()
 
-item1:setDesc('item1 desc')
 
-print(vim.inspect(item1))
-print(vim.inspect(item2))
-
-item1:toggle_state()
-
-print('after toggle')
+itemUtils:setDesc(item1, 'item1 desc')
 
 print(vim.inspect(item1))
 print(vim.inspect(item2))
 
+itemUtils:toggle_state(item1)
 
+--item1:toggle_state()
+--
+--print('after toggle')
+--
+print(vim.inspect(item1))
+--print(vim.inspect(item2))
+
+return itemUtils
