@@ -3,19 +3,19 @@ local M = {}
     M.items = {}
 
     -- Returns the number of items/elements in items table
-    function M.numItems()
+    function M:numItems()
         return table.getn(M.items)
     end
 
     -- Adds an item to items table
-    function M.addItem(item)
+    function M:addItem(item)
         table.insert(M.items, item)
     end
 
     -- Returns 0 if idx is not in range. 
     -- Returns 1 if idx is in range and removes item from items table
-    function M.removeItem(idx)
-        if ( M.numItems() < idx or idx < 0 ) then
+    function M:removeItem(idx)
+        if ( M:numItems() < idx or idx < 0 ) then
             return 0
         else
             table.remove(M.items, idx)
@@ -24,7 +24,7 @@ local M = {}
     end
 
     -- Set items to an empty table
-    function M.removeAll()
+    function M:removeAll()
         M.items = {}
     end
 
