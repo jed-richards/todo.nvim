@@ -16,10 +16,10 @@ local M = {}
     -- Returns 1 if idx is in range and removes item from items table
     function M:removeItem(idx)
         if ( M:numItems() < idx or idx < 0 ) then
-            return 0
+            return {}
         else
-            table.remove(M.items, idx)
-            return 1
+            local item = table.remove(M.items, idx)
+            return item
         end
     end
 
@@ -30,7 +30,7 @@ local M = {}
 
     -- Returns 0 if items table is not empty and 1 if items is 1
     function M.empty()
-        if (M.numItems() > 0) then
+        if (M:numItems() > 0) then
             return 0
         else
             return 1

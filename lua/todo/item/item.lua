@@ -1,15 +1,15 @@
 local itemUtils = {}
 
 itemUtils.icons = {
-    unmarked = '󰄱',
-    marked = '󰡖',
+    unmarked = '',
+    marked = '',
 }
 
 function itemUtils:newItem()
     return {
         desc = "Default description",
-        state = "Unmarked",
-        icon = '󰄱',
+        state = "unmarked",
+        icon = '',
     }
 end
 

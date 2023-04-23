@@ -1,5 +1,0 @@
--- Returns the line number of the current position of the cursor
--- My idea is that I add this to be able to select which item when useer hits <CR>
-function M.select_item()
-    local idx = vim.fn.line(".")
-end

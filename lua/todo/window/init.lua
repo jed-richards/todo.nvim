@@ -1,2 +1,2 @@
-require('todo.window.todo_window')
+require('todo.window.window')
 
