@@ -35,9 +35,23 @@ function M.open_window()
 
   -- Make both buffers close at the same time
   vim.api.nvim_command('au BufWipeout <buffer> exe "silent bwipeout! "'..border_buf)
+
+  --[[
   vim.cmd(
     "au BufLeave <buffer=" .. buf .. "> ++once silent lua require('todo.window.window').close_window()"
   )
+  --]]
+  
+  vim.cmd [[
+    "au BufLeave <buffer=" .. buf .. "> ++once silent lua require('todo.window.window').close_window()"
+  ]]
+
+  --[[
+  vim.cmd(
+    "au BufLeave <buffer=" .. buf .. "> silent bwipeout! "..border_buf
+  )
+  --]]
+
 
   vim.api.nvim_win_set_option(win, 'cursorline', true)
 
