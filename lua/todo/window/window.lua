@@ -41,7 +41,8 @@ function M.open_window()
   vim.api.nvim_command('au BufWipeout <buffer> exe "silent bwipeout! "'..border_buf)
 
   vim.cmd(
-    "au BufLeave <buffer=" .. buf .. "> ++once silent lua require('todo.window.window').close_window()"
+    "au BufLeave <buffer=" .. buf .. "> ++once silent \z
+    lua require('todo.window.window').close_window()"
   )
 
   vim.api.nvim_win_set_option(win, 'cursorline', true)
