@@ -1,3 +1,11 @@
+-- Default keymappings
+-- If adding more, keep structure
+--
+-- ['KEYMAP'] = {
+--   func = 'function name',
+--   desc = 'description of function'
+-- }
+
 return {
   ['<c-x>'] = {
     func = 'remove_item(require("todo.todo").select_item())',

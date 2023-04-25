@@ -19,8 +19,10 @@ end
 function M:writeFile(filepath, items_tbl)
   local file = io.open(filepath, "w")
   local str = JSON.encode(items_tbl)
-  file:write(str)
-  file:close()
+  if file ~= nil then
+    file:write(str)
+    file:close()
+  end
 end
 
 return M

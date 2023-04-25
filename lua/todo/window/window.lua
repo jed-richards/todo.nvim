@@ -5,8 +5,10 @@ local win = nil
 
 local M = {}
 
+-- boolean used to check if we need to save contents
 M.changed = false
 
+-- Constructs a string representing a border with a string in the center
 local function center(str)
   local width = api.nvim_win_get_width(0)
   local shift = math.floor(width / 2) - math.floor(string.len(str) / 2)
@@ -17,10 +19,12 @@ local function center(str)
   end
 end
 
+-- Close the main window
 function M.close_window()
   api.nvim_win_close(win, true)
 end
 
+-- Open the main window
 function M.open_window()
   -- Create buffers
   buf = vim.api.nvim_create_buf(false, true)
@@ -76,47 +80,28 @@ function M.remove_item(idx)
   end
 end
 
+-- Returns all lines in the main buffer
 function M.get_lines()
   return vim.api.nvim_buf_get_lines(buf, 0, -1, false)
 end
 
+-- Returns the line at a specified index
 function M.get_line(idx)
   return vim.api.nvim_buf_get_lines(buf, idx-1, idx, false)
 end
 
+-- Changes the line at a specified index
 function M.set_line(line, idx)
   return vim.api.nvim_buf_set_lines(buf, idx-1, idx, false, {line})
 end
 
+-- Sets a table of keymaps for the main buffer
 function M.set_mappings(mappings)
-  --mappings = mappings or {}
-  --[[
-  local mappings = {
-    ['d'] = 'remove_item(require("todo.todo").select_item())',
-    ['a'] = 'add_item()',
-    ['<cr>'] = 'toggle_item(require("todo.todo").select_item())',
-    h = 'help()',
-    q = 'close_window()',
-  }
-  --]]
-
   for k,v in pairs(mappings) do
     api.nvim_buf_set_keymap(buf, 'n', k, ':lua require("todo.todo").'..v.func..'<cr>', {
       nowait = true, noremap = true, silent = true
     })
   end
-  --[[
-  local other_chars = {
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'i', 'n', 'o', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-  }
-  for k,v in ipairs(other_chars) do
-    api.nvim_buf_set_keymap(buf, 'n', v, '', { nowait = true, noremap = true, silent = true })
-    api.nvim_buf_set_keymap(buf, 'n', v:upper(), '', { nowait = true, noremap = true, silent = true })
-    api.nvim_buf_set_keymap(buf, 'n',  '<c-'..v..'>', '', { nowait = true, noremap = true, silent = true })
-  end
-  --]]
 end
-
-
 
 return M
