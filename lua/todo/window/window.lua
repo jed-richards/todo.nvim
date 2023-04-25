@@ -10,7 +10,11 @@ M.changed = false
 local function center(str)
   local width = api.nvim_win_get_width(0)
   local shift = math.floor(width / 2) - math.floor(string.len(str) / 2)
-  return '╭' .. string.rep('─', shift-1) .. str .. string.rep('─', shift) .. '╮'
+  if width%2 == 0 then
+    return '╭' .. string.rep('─', shift-1) .. str .. string.rep('─', shift) .. '╮'
+  else
+    return '╭' .. string.rep('─', shift) .. str .. string.rep('─', shift) .. '╮'
+  end
 end
 
 function M.close_window()
@@ -36,24 +40,13 @@ function M.open_window()
   -- Make both buffers close at the same time
   vim.api.nvim_command('au BufWipeout <buffer> exe "silent bwipeout! "'..border_buf)
 
-  --[[
   vim.cmd(
     "au BufLeave <buffer=" .. buf .. "> ++once silent lua require('todo.window.window').close_window()"
   )
-  --]]
-  
-  vim.cmd [[
-    "au BufLeave <buffer=" .. buf .. "> ++once silent lua require('todo.window.window').close_window()"
-  ]]
-
-  --[[
-  vim.cmd(
-    "au BufLeave <buffer=" .. buf .. "> silent bwipeout! "..border_buf
-  )
-  --]]
-
 
   vim.api.nvim_win_set_option(win, 'cursorline', true)
+  vim.api.nvim_win_set_option(win, 'number', true)
+  vim.api.nvim_win_set_option(win, 'winhighlight', 'Normal:Normal')
 
   api.nvim_buf_set_lines(border_buf, 0, 1, false, {center('TODO LIST')})
 
@@ -107,7 +100,7 @@ function M.set_mappings(mappings)
   --]]
 
   for k,v in pairs(mappings) do
-    api.nvim_buf_set_keymap(buf, 'n', k, ':lua require("todo.todo").'..v..'<cr>', {
+    api.nvim_buf_set_keymap(buf, 'n', k, ':lua require("todo.todo").'..v.func..'<cr>', {
       nowait = true, noremap = true, silent = true
     })
   end
@@ -123,12 +116,6 @@ function M.set_mappings(mappings)
   --]]
 end
 
---[[
-local function update_win()
-  vim.api.nvim_buf_set_option(buf, 'modifiable', true)
-  vim.api.nvim_buf_set_option(buf, 'modifiable', false)
-end
---]]
 
 
 return M

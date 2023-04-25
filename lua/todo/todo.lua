@@ -5,12 +5,14 @@ local mappings = require("todo.keymap.keymap")
 local LIST = require("todo.list.list")
 local PATH = require("todo.path.path_utils")
 local window = require("todo.window.window")
+local help = require("todo.window.help_win")
 
 local M = {}
 
 M.buf = nil
 M.win = nil
 M.changed = false
+M.help_open = false
 
 local function save_contents()
   print('contents saved')
@@ -92,6 +94,18 @@ function M.toggle_list()
       save_contents()
     end
     window.close_window()
+  end
+end
+
+function M.help()
+  if not M.help_open then
+    M.toggle_list()
+    _,_ = help.open_window()
+    M.help_open = true
+  else
+    help.close_window()
+    M.help_open = false
+    M.toggle_list()
   end
 end
 
