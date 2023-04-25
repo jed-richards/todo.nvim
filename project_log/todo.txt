@@ -1,5 +1,4 @@
 -- 1/27/2023 --
-
 {
     1 : Finish writing code from online and understand what it is doing.
 
@@ -19,7 +18,6 @@
 
 
 -- 1/29/2023 --
-
 {
     1 : Fix set_mappings() functions (set keymapping <leader>td to open todo 
         window)
@@ -35,14 +33,12 @@
 
 
 -- 1/31/2023 --
-
 {
     1 : Still need to work on keymaps with (set_mappings())
 }
 
 
 -- 2/7/2023 --
-
 {
     1 : Idea for project and file storing -> crawl backwards in directory
         looking for .todo directory. This will allow for nesting. 
@@ -50,7 +46,6 @@
 
 
 -- 2/12/2023 --
-
 {
     1 : I need to make it so when I open a window with open_window() that I am
         able to have a variable with the path to the current directory and file
@@ -61,7 +56,6 @@
 
 
 -- 2/16/2023 --
-
 {
     1 : I need to figure out how I want to make a file attach to a buffer. Maybe
         if the file doesn't exist then I make it and read from it and write to
@@ -79,4 +73,64 @@
     3 : use vim.fn.mkdir() to make a new directory
 
     4 : continue looking in help/docs for vim.fn and vim-function
+}
+
+
+-- 2/21/2023 --
+{
+    1 : Make window.lua into a module that can be created and called in 
+        todo.lua
+
+    2 : Maybe have to use vim.fn.chdir() to change cwd
+}
+
+
+-- 2/26/2023 --
+{
+    1 : I might want to make the todo.txt be in JSON format so that when I want
+        to make buttons to check off items that I can delete the Key/Value pair
+        from the dictionary.
+
+    2 : I need to make keymappings while in the todo buffer that allows quiting
+        and etc.
+}
+
+
+-- 2/27/2023 --
+{
+    1 : Clean up code base
+
+    2 : Make UI have functionality:
+            check_off()
+            add_item() (make default look)
+            remove_item()
+}
+
+
+<<<<<<< HEAD
+-- 2/28/2023 --
+{
+    1 : make items dictionary
+        ex:
+            items = {
+                item1 = {
+                    short_desc = 'Abbreviated description'
+                    description = 'This is where todo goes'
+                    state = {'todo', 'done', 'marked', 'full_desc_open'} 
+                        // probably other states or something too
+                    icon = // based on state
+                }
+            }
+=======
+-- 3/7/2023 --
+{
+    1 : Finish item module.
+
+    2 : Implement the JSON item list and not the .txt file
+
+    3 : Make UI have functionality:
+            check_off()
+            add_item() (make default look)
+            remove_item()
+>>>>>>> ba21ef21640b1d8edbbbd7490cecb119711fd0e6
 }
